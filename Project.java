@@ -34,6 +34,7 @@ public class Project {
     // method for game RPS
     public static void RPS() {
         System.out.println("The rules are simple. Paper beats rock, rock beats scissors, and scissors beats rock.");
+        System.out.println("This game IS case-sensitive.");
         // scans input for Rock, Paper, or Scissors
         Scanner rpsInput = new Scanner(System.in);
         System.out.print("Please enter a weapon (Rock, Paper, or Scissors), or 'quit' to quit: "); 
