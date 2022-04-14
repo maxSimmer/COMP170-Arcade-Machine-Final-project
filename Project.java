@@ -17,6 +17,7 @@ public class Project {
         // initalize players X and O. X is the user, Y is the AI.
         //char X;
         //char O;
+        //Chongwoos Code
 
         /* |-1-|-2-|-3-|
            |-4-|-5-|-6-|        
