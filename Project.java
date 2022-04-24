@@ -100,13 +100,16 @@ public class Project {
         } else {
             System.out.println("\nYou Win!");
         }
+        // reset the AI selection
         selection(); // after the game ends, choose another game
 
         if(rpsChoice.equals("quit")){
                 System.exit(0);
             }
+            // selection();
         }     
-        rpsInput.close();           
+        rpsInput.close(); 
+        // selection();          
     }   
 
     
