@@ -7,8 +7,7 @@ public class tictactoe {
 	// CheckWinner method will
 	// decide the combination
 	// of three box given below.
-	static String checkWinner()
-	{
+	public static String checkWinner(){
 		for (int a = 0; a < 8; a++) {
 			String line = null;
 
@@ -50,11 +49,9 @@ public class tictactoe {
 		}
 		
 		for (int a = 0; a < 9; a++) {
-			if (Arrays.asList(board).contains(
-					String.valueOf(a + 1))) {
+			if (Arrays.asList(board).contains(String.valueOf(a + 1))) {
 				break;
-			}
-			else if (a == 8) {
+			} else if (a == 8) {
 				return "draw";
 			}
 		}
@@ -75,8 +72,7 @@ public class tictactoe {
 	| 7 | 8 | 9 |
 	|---|---|---|*/
 	
-	static void printBoard()
-	{
+	public static void printBoard(){
 		System.out.println("|---|---|---|");
 		System.out.println("| " + board[0] + " | "
 						+ board[1] + " | " + board[2]
