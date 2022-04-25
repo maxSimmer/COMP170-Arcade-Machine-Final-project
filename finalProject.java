@@ -5,9 +5,13 @@ import java.util.Scanner; /* user input, scanners are created for each method to
 import java.util.Random; // random generation for AI
 import java.util.*;
 
-public class Project {
+
+
+public class finalProject {
+    // initalize variables for GAME TIC TAC TOE
     static String board[] = new String[9];
     static String turn;
+
     // main method which begins our program
     public static void main(String[] args)throws ClassNotFoundException{  
         selection(); // call game selection first
@@ -112,7 +116,7 @@ public class Project {
 				if (!(numInput > 0 && numInput <= 9)) {
 					System.out.println(
 						"Invalid input; re-enter slot number:");
-					continue;
+                    continue;
 				}
 			}
 			catch (InputMismatchException e) {
@@ -134,55 +138,41 @@ public class Project {
 					turn = "X";
 				}
 
-				printBoard();
-				winner = checkWinner();
+				printBoard(); // print the gameboard every  turn
+				winner = checkWinner(); 
 			}
 			else {
 				System.out.println(
 					"Slot already taken; re-enter slot number:");
+                    continue;
 			}
 		}
 		
-		// If no one win or lose from both player x and O.
-		// then here is the logic to print "draw".
-		if (winner.equalsIgnoreCase("draw")) {
+		
+		if (winner.equalsIgnoreCase("draw")) { // if tie scenario, print draw
 			System.out.println(
 				"It's a draw! Thanks for playing.");
 		}
 		
-		// For winner -to display Congratulations! message.
-		else {
+		
+		else { // winner is printed
 			System.out.println(
 				"Congratulations! " + winner
 				+ "'s have won! Thanks for playing.");
 		}
-        // initalize players X and O. X is the user, Y is the AI.
-        //char X;
-        //char O;
-        //Chongwoos Code
-
-        /* |-1-|-2-|-3-|
-           |-4-|-5-|-6-|        
-           |-7-|-8-|-9-| */ // 3x3 table using an array
-
-        // table creation
-
-        // user input to decide on their position (1-9)
-
-        // ai input
-
-        // if 3x/y in a row, win, else lose?
+		selection();
         
            
     }
     // method for game RPS
     public static void RPS() {
         System.out.println("The rules are simple. Paper beats rock, rock beats scissors, and scissors beats rock.");
-        System.out.println("This game IS case-sensitive.");
+        
         // scans input for Rock, Paper, or Scissors
         Scanner rpsInput = new Scanner(System.in);
         System.out.print("Please enter a weapon (Rock, Paper, or Scissors), or 'quit' to quit: "); 
         String rpsChoice = rpsInput.nextLine(); // read users weapon choice
+		rpsChoice = rpsChoice.toLowerCase();
     
         // rock = 1, paper = 2, scissors = 3
         while(!rpsChoice.equals("quit")){ // IF INPUT IS NOT QUIT DO THIS
@@ -252,26 +242,13 @@ public class Project {
         rpsInput.close(); 
         // selection();          
     }   
-
     
     // method for game Pong
     public static void Pong() {
-        /* somehow figure out how to create a UI and shapes for pong.
-        playerRectangle;
-        userRectangle;
-        pongBall;
-        */
-
-        // click detection
-        // if uparrow = move up, else if downarrow = move down, else do nothing.
-
-
-        // ball movement
-
-        // AI movement
-
-        // score
-    }
+        pongFrame frame = new pongFrame();
+	}
+        
+    
     /* selction will allow the user to input their specific game type and
     depending on what they enter will determine the game they are brought to. 
     if the user enters a game not featured, it will ask for user input again. */
@@ -282,14 +259,16 @@ public class Project {
 
         // initalize variable choice to read user input
         String choice = input.next();
+		choice = choice.toLowerCase();
+		
 
         /* if user inputs this game, call the method for that specific game. 
         else repeat */
-        if (choice.equals("threeInARow")) { // if threeInARow, call that method
+        if (choice.equals("threeinarow")) { // if threeInARow, call that method
             threeInARow();
-        } else if (choice.equals("RPS")) {  // if Pong, call that method
+        } else if (choice.equals("rps")) {  // if Pong, call that method
             RPS();
-        } else if (choice.equals("PONG")) {   // if RPS call that method
+        } else if (choice.equals("pong")) {   // if RPS call that method
             Pong();
         } else if (choice.equals("quit")){ // if quit, then quit
             System.exit(0);
@@ -300,10 +279,5 @@ public class Project {
     
         input.close();
     }
+    
 }
-
-
-
-
-
-
